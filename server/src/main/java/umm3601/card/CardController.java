@@ -59,7 +59,7 @@ public class CardController {
             res.body("The requested card id " + id + " wasn't a legal Mongo Object ID.\n" +
                 "See 'https://docs.mongodb.com/manual/reference/method/ObjectId/' for more info.");
             return "";
-        }
+        }https://github.com/Clojure-Intro-Course/data-processing-and-tools.git
         if (card != null) {
             return card;
         } else {
@@ -174,18 +174,18 @@ public class CardController {
      * @param word
      * @param synonym
      * @param antonym
-     * @param description
-     * @param example
+     * @param general_sense
+     * @param example_usage
      * @return boolean true if successful
      */
-    public boolean addNewCard(String word, String synonym, String antonym, String description, String example ) {
+    public boolean addNewCard(String word, String synonym, String antonym, String general_sense, String example_usage ) {
 
         Document newCard = new Document();
         newCard.append("word", word);
         newCard.append("synonym", synonym);
         newCard.append("antonym", antonym);
-        newCard.append("description", description);
-        newCard.append("example", example);
+        newCard.append("general_sense", general_sense);
+        newCard.append("example_usage", example_usage);
 
         try {
             cardCollection.insertOne(newCard);
