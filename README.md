@@ -1,6 +1,7 @@
 # CSCI 3601 Production Template Fall 2017
 [![Build Status](https://travis-ci.org/UMM-CSci-3601-F17/interation-1-raymond_shayler.svg?branch=master)](https://travis-ci.org/UMM-CSci-3601-F17/interation-1-raymond_shayler)
 
+
 <!-- TOC depthFrom:1 depthTo:5 withLinks:1 updateOnSave:1 orderedList:0 -->
 ## Table of Contents
 - [Setup](#setup)
@@ -67,7 +68,7 @@ need to have data in the `dev` database before running the e2e tests!
 
 Turn on your repo in [Travis CI][travis], replace the build status image in this README, and push your changes. That will trigger a build with Travis.
 
-## Resources
+## ResourcesHome
 ### Angular 4
 - [What _is_ Angular 4 and Typescript?][angular-2-4]
 - [What _is_ Angular CLI?][angular-cli]
