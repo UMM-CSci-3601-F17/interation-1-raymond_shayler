@@ -163,7 +163,21 @@ public class CardController {
             }
         }
         catch(RuntimeException ree)
-        {
+        {//    @Test
+//    public void getAllCards() {
+//        Map<String, String[]> emptyMap = new HashMap<>();
+//        String jsonResult = cardController.getCards(emptyMap);
+//        BsonArray docs = parseJsonArray(jsonResult);
+//
+//        assertEquals("Should be 4 cards", 4, docs.size());
+//        List<String> names = docs
+//            .stream()
+//            .map(CardControllerSpec::getName)
+//            .sorted()
+//            .collect(Collectors.toList());
+//        List<String> expectedNames = Arrays.asList("Chris", "Jamie", "Pat", "Sam");
+//        assertEquals("Names should match", expectedNames, names);
+//    }
             ree.printStackTrace();
             return false;
         }

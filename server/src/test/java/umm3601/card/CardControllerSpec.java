@@ -1,19 +1,24 @@
 package umm3601.card;
 
+import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.util.JSON;
 import org.bson.*;
 import org.bson.codecs.*;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.json.JsonReader;
 import org.bson.types.ObjectId;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.print.Doc;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -56,7 +61,7 @@ public class CardControllerSpec
         // of the database.
         cardController = new CardController(db);
     }
-    // http://stackoverflow.com/questions/34436952/json-parse-equivalent-in-mongo-driver-3-x-for-java
+    // http://stackoverflow.com/questions/34436952/jcard.containsKeyson-parse-equivalent-in-mongo-driver-3-x-for-java
     private BsonArray parseJsonArray(String json) {
         final CodecRegistry codecRegistry
             = CodecRegistries.fromProviders(Arrays.asList(
@@ -69,6 +74,7 @@ public class CardControllerSpec
 
         return arrayReader.decode(reader, DecoderContext.builder().build());
     }
+
 
     private static String getWord(BsonValue val) {
         BsonDocument doc = val.asDocument();
@@ -91,8 +97,30 @@ public class CardControllerSpec
         assertEquals("Words should match", expectedWords, words);
     }
 
+    @Test
+    public void getCardInfo(){
+        Map<String,String[]> emptyMap = new HashMap<>();
+        String jsonResult = cardController.getCards(emptyMap);
+        BsonArray cards = parseJsonArray(jsonResult);
+        BsonValue tempcard =  cards.get(0);
+        BsonDocument card = tempcard.asDocument();
+
+        Assert.assertTrue(card.containsKey("word"));
+        Assert.assertTrue(card.containsKey("synonym"));
+        Assert.assertTrue(card.containsKey("antonym"));
+        Assert.assertTrue(card.containsKey("general_sense"));
+        Assert.assertTrue(card.containsKey("example_usage"));
+
+        assertEquals("Should be Rugose", "Rugose", card.getString("word").getValue());
+        assertEquals("Should be wrinkled", "wrinkled", card.getString("synonym").getValue());
+        assertEquals("Should be smooth", "smooth", card.getString("antonym").getValue());
+        assertEquals("Should be pebbly or corrugated", "pebbly or corrugated", card.getString("general_sense").getValue());
+        assertEquals("Should be this frog is rugose", "this frog is rugose", card.getString("example_usage").getValue());
 
 
+    }
+
+    //kept for reference in writing new tests.
 //    @Test
 //    public void getAllCards() {
 //        Map<String, String[]> emptyMap = new HashMap<>();
