@@ -141,15 +141,13 @@ public class CardController {
                     BasicDBObject dbO = (BasicDBObject) o;
 
                     String word = dbO.getString("word");
-                    //For some reason age is a string right now, caused by angular.
-                    //This is a problem and should not be this way but here ya go
                     String synonym = dbO.getString("synonym");
                     String antonym = dbO.getString("antonym");
-                    String description = dbO.getString("description");
-                    String example = dbO.getString("example");
+                    String general_sense = dbO.getString("general_sense");
+                    String example_usage = dbO.getString("example_usage");
 
-                    System.err.println("Adding new card [word=" + word + ", synonym=" + synonym + " antonym=" + antonym + " description=" + description + " example=" + example +']');
-                    return addNewCard(word, synonym, antonym, description, example);
+                    System.err.println("Adding new card [word=" + word + ", synonym=" + synonym + " antonym=" + antonym + " general_sense=" + general_sense + " example_usage=" + example_usage +']');
+                    return addNewCard(word, synonym, antonym, general_sense, example_usage);
                 }
                 catch(NullPointerException e)
                 {
