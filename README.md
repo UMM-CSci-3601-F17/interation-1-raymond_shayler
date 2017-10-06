@@ -68,7 +68,7 @@ need to have data in the `dev` database before running the e2e tests!
 
 Turn on your repo in [Travis CI][travis], replace the build status image in this README, and push your changes. That will trigger a build with Travis.
 
-## Resources
+## ResourcesHome
 ### Angular 4
 - [What _is_ Angular 4 and Typescript?][angular-2-4]
 - [What _is_ Angular CLI?][angular-cli]
