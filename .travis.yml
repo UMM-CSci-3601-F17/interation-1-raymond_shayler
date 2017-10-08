@@ -13,3 +13,6 @@ before_script:
     - npm install -g @angular/cli
 
 services: mongodb
+
+notifications:
+    slack: umm-3601-f17:rHa0R1DfIve09a7oIyMSJSpu
