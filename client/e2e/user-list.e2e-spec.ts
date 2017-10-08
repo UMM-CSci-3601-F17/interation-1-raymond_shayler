@@ -28,7 +28,7 @@ describe('angular-spark-lab', () => {
         page.navigateTo();
         expect(page.getUserTitle()).toEqual('Users');
     });
-
+/*
     it('should type something in filer name box and check that it returned correct element', () => {
         page.navigateTo();
         page.typeAName("Lynn");
@@ -49,4 +49,5 @@ describe('angular-spark-lab', () => {
         expect(page.getFirstUser()).toEqual("Merrill Parker is 27 years old");
 
     });
+    */
 });
