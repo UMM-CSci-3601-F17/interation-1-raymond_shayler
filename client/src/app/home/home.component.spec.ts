@@ -24,12 +24,12 @@ describe('Home', () => {
         component = fixture.componentInstance; // BannerComponent test instance
 
         // query for the title <h1> by CSS element selector
-        de = fixture.debugElement.query(By.css('#hello-world'));
+        de = fixture.debugElement.query(By.css('#Title'));
         el = de.nativeElement;
     });
 
     it("displays a greeting", () => {
         fixture.detectChanges();
-        expect(el.textContent).toContain(component.text);
+        expect(el.textContent).toContain("SAGE");
     });
 });
