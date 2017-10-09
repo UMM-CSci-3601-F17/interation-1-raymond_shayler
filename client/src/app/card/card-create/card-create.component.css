@@ -1,0 +1,20 @@
+.card-creation-form > *{
+    width: 90%;
+    align-self: center;
+
+}
+
+
+.card-creation-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-row{
+    margin: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+

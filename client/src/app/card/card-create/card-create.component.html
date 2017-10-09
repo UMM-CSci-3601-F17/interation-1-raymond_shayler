@@ -1,0 +1,30 @@
+<td-layout>
+    <td-layout-card-over cardTitle="Create a new card:">
+        <div class="outer-container">
+            <div class="card-creation-form">
+                <mat-form-field>
+                    <input matInput placeholder="Word" required>
+                </mat-form-field>
+
+                <mat-divider></mat-divider>
+                <mat-form-field>
+                    <input matInput placeholder="Synonym" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Antonym" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="General Sense" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Example Usage">
+                </mat-form-field>
+            </div>
+
+            <div class="button-row">
+                <button id="cancelButton" mat-raised-button color="warn">Cancel</button>
+                <button id="submitButton" mat-raised-button color="primary">Add Card</button>
+            </div>
+        </div>
+    </td-layout-card-over>
+</td-layout>
