@@ -1,34 +1,55 @@
-.flex-container {
-    display: -webkit-flex;
-    display: flex;
-    width: 400px;
-    height: 250px;
-    background-color: lightgrey;
-}
+/*.flex-container {*/
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+    /*width: 400px;*/
+    /*height: 250px;*/
+    /*background-color: lightgrey;*/
+/*}*/
+
+/*.main-container{*/
+    /*height: 100vh;*/
+    /*background-color: lightgray;*/
+/*}*/
+
+/*.custom-button{*/
+    /*background-color: mediumseagreen;*/
+    /*width:90%;*/
+    /*margin-left:5%;*/
+    /*margin-right:5%;*/
+    /*margin-top:3vh;*/
+    /*margin-bottom:0vh;*/
+
+    /*padding-top: 10vh;*/
+    /*padding-bottom:10vh;*/
+    /*border-style: none;*/
+    /*border-radius: 0px;*/
+
+/*}*/
+
+/*.flex-item {*/
+    /*background-color: cornflowerblue;*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*margin: 10px;*/
+/*}*/
 
 .main-container{
-    height: 100vh;
-    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
-.custom-button{
-    background-color: mediumseagreen;
-    width:90%;
-    margin-left:5%;
-    margin-right:5%;
-    margin-top:3vh;
-    margin-bottom:0vh;
-
-    padding-top: 10vh;
-    padding-bottom:10vh;
-    border-style: none;
-    border-radius: 0px;
+.two-two{
+    display: flex;
+    flex-direction: row;
 
 }
 
-.flex-item {
-    background-color: cornflowerblue;
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+.sidebyside{
+    width:50%;
+}
+.ourbutton{
+    margin:20px;
+    padding: 50px;
 }
