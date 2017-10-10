@@ -24,7 +24,7 @@ describe('Home', () => {
         component = fixture.componentInstance; // BannerComponent test instance
 
         // query for the title <h1> by CSS element selector
-        de = fixture.debugElement.query(By.css('#Title'));
+        de = fixture.debugElement.query(By.css('.Title'));
         el = de.nativeElement;
     });
 
