@@ -33,23 +33,40 @@
     /*margin: 10px;*/
 /*}*/
 
+
+.Title{
+    text-align: center;
+    font-size: 30px;
+}
+
+#subTitle {
+    font-size: 10px;
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
 }
 
 .two-two{
     display: flex;
     flex-direction: row;
-
 }
 
 .sidebyside{
     width:50%;
-}
-.ourbutton{
-    margin:20px;
+    font-size: 30px;
+    margin:15px;
     padding: 50px;
 }
+.ourbutton{
+    margin:15px;
+    padding: 50px;
+    font-size: 30px;
+}
+
+
+
+
+
