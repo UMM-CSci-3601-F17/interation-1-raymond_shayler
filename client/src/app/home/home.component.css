@@ -32,8 +32,11 @@
     /*height: 100px;*/
     /*margin: 10px;*/
 /*}*/
-
-
+.Page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .Title{
     text-align: center;
     font-size: 30px;
@@ -44,9 +47,12 @@
 }
 
 .main-container{
+    margin: 0px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex:1;
 }
 
 .two-two{
