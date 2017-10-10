@@ -1,5 +1,7 @@
-import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {Component, OnInit, EventEmitter, Output, NgModule} from '@angular/core';
 import {CardService} from "../card.service"
+import {MATERIAL_COMPATIBILITY_MODE} from "@angular/material";
+import {MatButtonModule,MatCardModule, MatFormFieldModule} from "@angular/material";
 
 @Component({
     selector: 'app-card-create',

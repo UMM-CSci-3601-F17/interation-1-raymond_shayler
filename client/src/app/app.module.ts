@@ -16,7 +16,7 @@ import {APP_BASE_HREF} from "@angular/common";
 
 import {SharedModule} from "./shared.module";
 import {CardComponent} from "./card/card/card.component";
-
+import {CardService} from "./card/card.service";
 
 @NgModule({
     imports: [
@@ -36,6 +36,7 @@ import {CardComponent} from "./card/card/card.component";
     ],
     providers: [
         UserListService,
+        CardService,
         {provide: APP_BASE_HREF, useValue: '/'},
         {provide: MATERIAL_COMPATIBILITY_MODE, useValue: true}
     ],

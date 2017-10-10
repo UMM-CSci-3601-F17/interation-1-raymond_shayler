@@ -39,6 +39,6 @@ describe('AppComponent', () => {
     it('should render title in the navbar', () => {
         appFixture.detectChanges();
         let navbar: HTMLElement = debugElement.query(By.css('td-layout-nav')).nativeElement;
-        expect(navbar.textContent).toContain('Covalent');
+        expect(navbar.textContent).toContain('SAGE');
     });
 });
