@@ -30,4 +30,10 @@ export class CardService {
         //Send post request to add a new user with the card data as the body with specified headers.
         return this.http.post(this.cardUrl + "/new", body).map(res => res.json());
     }
+
+    getRandomCard(): Observable<Card> {
+        let observable: Observable<any> = this.http.request(this.cardUrl + "/random");
+        console.log("Asked for a card");
+        return observable.map(res => res.json());
+    }
 }

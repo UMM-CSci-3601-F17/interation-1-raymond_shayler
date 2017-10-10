@@ -10,4 +10,9 @@
             <li *ngIf="this.example_usage">Example use: "{{this.example_usage}}"</li>
         </ul>
     </mat-divider>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="fetchNewCard()">
+            Next
+        </button>
+    </mat-card-actions>
 </mat-card>
