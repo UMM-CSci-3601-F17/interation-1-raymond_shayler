@@ -1,72 +1,20 @@
-/*.flex-container {*/
-    /*display: -webkit-flex;*/
-    /*display: flex;*/
-    /*width: 400px;*/
-    /*height: 250px;*/
-    /*background-color: lightgrey;*/
-/*}*/
+button{
+    margin:5px;
+    border-radius: 100px;
+    background-color: mediumseagreen;
+    border-style: solid;
+    border-width:2px;
+    border-color: black;
+    width:40%;
+    max-width: 200px;
+    font-size: 16pt;
+    font-family:"Fira Sans Medium",serif;
+}
 
-/*.main-container{*/
-    /*height: 100vh;*/
-    /*background-color: lightgray;*/
-/*}*/
+button:hover{
+    color: black;
+}
 
-/*.custom-button{*/
-    /*background-color: mediumseagreen;*/
-    /*width:90%;*/
-    /*margin-left:5%;*/
-    /*margin-right:5%;*/
-    /*margin-top:3vh;*/
-    /*margin-bottom:0vh;*/
-
-    /*padding-top: 10vh;*/
-    /*padding-bottom:10vh;*/
-    /*border-style: none;*/
-    /*border-radius: 0px;*/
-
-/*}*/
-
-/*.flex-item {*/
-    /*background-color: cornflowerblue;*/
-    /*width: 100px;*/
-    /*height: 100px;*/
-    /*margin: 10px;*/
-/*}*/
-
-
-.Title{
+.button-row{
     text-align: center;
-    font-size: 30px;
 }
-
-#subTitle {
-    font-size: 10px;
-}
-
-.main-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.two-two{
-    display: flex;
-    flex-direction: row;
-}
-
-.sidebyside{
-    width:50%;
-    font-size: 30px;
-    margin:15px;
-    padding: 50px;
-}
-.ourbutton{
-    margin:15px;
-    padding: 50px;
-    font-size: 30px;
-}
-
-
-
-
-
