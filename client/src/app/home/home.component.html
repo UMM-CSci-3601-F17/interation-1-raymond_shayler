@@ -1,40 +1,21 @@
-<!--<div layout-gt-sm="row">-->
-<!--<div flex-gt-sm="80" flex-offset-gt-sm="10">-->
-<!--<td-layout-card-over>-->
-<!--<h1 id="Title">SAGE</h1>-->
-<!--<div class="button-row" class="main3buttons">-->
-<!--<button mat-raised-button id="ManageCards">Manage Cards</button>-->
-<!--<button mat-raised-button id="Play">Play</button>-->
-<!--<button mat-raised-button id="Settings">Settings</button>-->
-<!--</div>-->
-<!--</td-layout-card-over>-->
-<!--<button class="Help">-->
-<!--<i class="material-icons">help</i>-->
-<!--</button>-->
-<!--</div>-->
-<!--</div>-->
+<h1 id="logo">Sage</h1>
+<h3 id="under-logo">Vocabulary</h3>
 
-
-<mat-card class>
-    <mat-card-title class="Title" > <!-- Changing anything with the title is likely to break home.spec greeting test -->
-        SAGE
-        <h1 id="subTitle">Vocabulary</h1>
-    </mat-card-title>
-    <div class="main-container">
-        <button class="ourbutton" mat-raised-button color="primary">
-            Play
-        </button>
-        <div class="two-two">
-            <button class="sidebyside" mat-raised-button color="primary">
-                Cards
-            </button>
-
-            <button class="sidebyside" mat-raised-button color="primary">
-                Decks
-            </button>
-        </div>
-        <button class="ourbutton" mat-raised-button color="primary">
-            Settings
-        </button>
+<div>
+    <div class="button-row">
+        <button class="double-button" mat-raised-button color="accent" [routerLink]="['/card']">Play</button>
     </div>
-</mat-card>
+    <div class="button-row">
+        <button class="double-button" mat-raised-button color="primary" [routerLink]="['/card-create']">Cards</button>
+    </div>
+    <div class="button-row">
+        <button class="double-button" mat-raised-button color="primary">Decks</button>
+    </div>
+    <div class="button-row">
+        <button class="double-button" mat-raised-button color="primary">Settings</button>
+    </div>
+</div>
+
+
+
+

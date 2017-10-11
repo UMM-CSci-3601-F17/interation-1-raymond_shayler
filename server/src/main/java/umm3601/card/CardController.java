@@ -213,7 +213,23 @@ public class CardController {
         return true;
     }
 
+    public String getRandomCard(){
+        //Document single_card = cardCollection.aggregate([{$sample: {size: 1}}])
+
+        Document filterDoc = new Document();
+
+        filterDoc = filterDoc.append("word", "Giant");
+
+        //FindIterable comes from mongo, Document comes from Gson
+        FindIterable<Document> matchingCards;
+        matchingCards = cardCollection.find(filterDoc);
+        return JSON.serialize(matchingCards.first());
+
+    }
 
 
+    public String getRandomCard(Request request, Response response) {
+        return getRandomCard();
+    }
 
 }
