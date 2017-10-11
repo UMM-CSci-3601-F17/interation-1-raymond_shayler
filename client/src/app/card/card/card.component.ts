@@ -30,6 +30,10 @@ export class CardComponent implements OnInit {
 
     fetchNewCard(){
         console.log("Button click?");
+            this.synonym = null;
+            this.antonym = null;
+            this.general_sense = null;
+            this.example_usage = null;
         this.cardService.getRandomCard().subscribe(succeeded => {
             this.word = succeeded.word;
             this.hiddenSynonym = succeeded.synonym;
