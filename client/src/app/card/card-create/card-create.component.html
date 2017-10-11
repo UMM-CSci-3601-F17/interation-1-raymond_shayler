@@ -23,7 +23,7 @@
 
             <mat-card-actions >
                 <button id="submitButton" mat-raised-button color="primary" (click)="submitNewCard()">Create {{this.word}}</button>
-                <button id="cancelButton" mat-raised-button color="warn">Cancel</button>
+                <button id="cancelButton" mat-raised-button color="warn" [routerLink]="['/']">Cancel</button>
             </mat-card-actions>
         </div>
 </mat-card>

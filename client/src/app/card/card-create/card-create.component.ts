@@ -26,6 +26,11 @@ export class CardCreateComponent implements OnInit {
     submitNewCard() {
         this.cardService.addNewCard(this.word,this.synonym,this.antonym,this.general_sense,this.example_usage).subscribe(succeeded => {
             console.log("added card succesfully: " + succeeded);
+            this.word = null;
+            this.synonym = null;
+            this.antonym = null;
+            this.general_sense = null;
+            this.example_usage = null;
         })
     }
 
