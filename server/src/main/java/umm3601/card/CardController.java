@@ -3,15 +3,18 @@ package umm3601.card;
 import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoException;
+import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Aggregates;
 import com.mongodb.util.JSON;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import spark.Request;
 import spark.Response;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -213,7 +216,18 @@ public class CardController {
         return true;
     }
 
+    public String getRandomCard(){
+        AggregateIterable<Document> single_card = cardCollection.aggregate(Arrays.asList(
+            Aggregates.sample(1)
+        ));
+
+        return JSON.serialize(single_card.first());
+
+    }
 
 
+    public String getRandomCard(Request request, Response response) {
+        return getRandomCard();
+    }
 
 }
