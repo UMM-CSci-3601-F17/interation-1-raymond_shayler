@@ -116,10 +116,26 @@ public class CardControllerSpec
         assertEquals("Should be smooth", "smooth", card.getString("antonym").getValue());
         assertEquals("Should be pebbly or corrugated", "pebbly or corrugated", card.getString("general_sense").getValue());
         assertEquals("Should be this frog is rugose", "this frog is rugose", card.getString("example_usage").getValue());
-
-
     }
 
+
+    @Test
+    public void addCard() {
+        cardController.addNewCard("Colloquial", "conversational", "esoteric", "commonly understood lexicon", "He spoke with colloquial jargon.");
+
+        Map<String, String[]> emptyMap = new HashMap<>();
+        String jsonResult = cardController.getCards(emptyMap);
+        BsonArray docs = parseJsonArray(jsonResult);
+
+        assertEquals("There should now be 3 cards", 3, docs.size());
+        List<String> words = docs
+            .stream()
+            .map(CardControllerSpec::getWord)
+            .sorted()
+            .collect(Collectors.toList());
+        List<String> expectedWords = Arrays.asList("Blasphemous", "Colloquial", "Rugose");
+        assertEquals("Words should match", expectedWords, words);
+    }
     //kept for reference in writing new tests.
 //    @Test
 //    public void getAllCards() {
