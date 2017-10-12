@@ -37,7 +37,12 @@ describe('angular-spark-lab', () => {
             // expect(page.selectTextById("antonym")).toEqual("Aeloian");
             // expect(page.selectTextById("general_sense")).toEqual("a style of vocal hymms");
             // expect(page.selectTextById("example_usage")).toEqual("I meditate to gregorian chanting");
+
+        //This test will not work on the local machine, unless mongo is in a blank state.
+        page.navigateToSpecific("/card");
+        expect(page.selectTextById("cardWord")).toEqual("Gregorian");
         });
+
 
     it("should be cancelable", ()=>{
         page.navigateTo();
