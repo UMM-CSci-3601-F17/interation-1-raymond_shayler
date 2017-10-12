@@ -4,6 +4,8 @@ import {DebugElement} from "@angular/core";
 import {By} from "@angular/platform-browser";
 import {SharedModule} from "../shared.module";
 import {MATERIAL_COMPATIBILITY_MODE} from "@angular/material";
+import {RouterTestingModule} from "@angular/router/testing";
+//import {routing} from "./app.routes";
 
 describe('Home', () => {
 
@@ -14,22 +16,27 @@ describe('Home', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [SharedModule],
-            declarations: [HomeComponent], // declare the test component
+            imports: [SharedModule, RouterTestingModule],
+            declarations:[HomeComponent],
+
+            // declare the test component
             providers: [{provide: MATERIAL_COMPATIBILITY_MODE, useValue: true}],
-        });
+        })
 
         fixture = TestBed.createComponent(HomeComponent);
 
         component = fixture.componentInstance; // BannerComponent test instance
 
         // query for the title <h1> by CSS element selector
-        de = fixture.debugElement.query(By.css('.Title'));
+        de = fixture.debugElement.query(By.css('#logo'));
         el = de.nativeElement;
     });
-/* Template parse error test
+
+    /*
+    Test various buttons on the homePage
+     */
     it("displays a greeting", () => {
         fixture.detectChanges();
-        expect(el.textContent).toContain("SAGE");
-    }); */
+        expect(el.textContent).toContain("Sage");
+    });
 });

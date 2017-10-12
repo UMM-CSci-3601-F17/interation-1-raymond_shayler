@@ -23,6 +23,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * JUnit tests for the CardController.
@@ -160,6 +161,11 @@ public class CardControllerSpec
         assertEquals("Words should match", expectedWords, words);
     }
 
+    @Test
+    public void testRandomCardRetriever(){
+        String jsonRes = cardController.getRandomCard();
+        assertNotNull(jsonRes);
+    }
     @Test
     public void checkNewCardAttributes() {
         cardController.addNewCard("Colloquial", "conversational", "esoteric", "commonly understood lexicon", "He spoke with colloquial jargon.");

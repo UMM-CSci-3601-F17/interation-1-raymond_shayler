@@ -9,7 +9,6 @@ import {CardComponent} from "./card/card/card.component";
 // Route Configuration
 export const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'users', component: UserListComponent},
     {path: 'card-create', component: CardCreateComponent},
     {path: 'card', component: CardComponent}
 ];
