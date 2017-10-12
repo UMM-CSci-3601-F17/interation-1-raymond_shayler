@@ -1,20 +1,20 @@
 <mat-card>
     <mat-divider>
-        <h1>{{this.word}}</h1>
+        <h1 id="cardWord">{{this.word}}</h1>
     </mat-divider>
     <mat-divider>
         <ul id="hintContainer">
-            <li *ngIf="this.synonym"><strong>Synonym:</strong>{{this.synonym}}</li>
-            <li *ngIf="this.antonym"><strong>Antonym:</strong> {{this.antonym}}</li>
-            <li *ngIf="this.general_sense"><strong>General Sense:</strong> {{this.general_sense}}</li>
-            <li *ngIf="this.example_usage"><strong>Example Use:</strong> "{{this.example_usage}}"</li>
+            <li id="cardSynonym" *ngIf="this.synonym"><strong>Synonym:</strong>{{this.synonym}}</li>
+            <li id="cardAntonym" *ngIf="this.antonym"><strong>Antonym:</strong> {{this.antonym}}</li>
+            <li id="cardGeneralSense" *ngIf="this.general_sense"><strong>General Sense:</strong> {{this.general_sense}}</li>
+            <li id="cardExampleUsage" *ngIf="this.example_usage"><strong>Example Use:</strong> "{{this.example_usage}}"</li>
         </ul>
     </mat-divider>
     <mat-card-actions>
-        <button mat-raised-button color="primary" (click)="fetchNewCard()">
+        <button id="cardButtonNext" mat-raised-button color="primary" (click)="fetchNewCard()">
             Next
         </button>
-        <button mat-raised-button color="primary" (click)="displayHint()">
+        <button id="cardButtonHint" mat-raised-button color="primary" (click)="displayHint()">
             Hint?
         </button>
     </mat-card-actions>
