@@ -23,6 +23,7 @@ describe('CardCreateComponent', () => {
     fixture.detectChanges();
   });
 
+    //Commented out due to errors
   // it('should create', () => {
   //   expect(component).toBe(true);
   // });
