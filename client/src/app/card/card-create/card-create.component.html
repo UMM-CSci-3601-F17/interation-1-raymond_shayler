@@ -1,0 +1,29 @@
+<mat-card>
+<mat-card-title> Create a card: </mat-card-title>
+        <div class="outer-container">
+            <mat-card-content>
+                <mat-form-field>
+                    <input id="word" #title matInput placeholder="Word" [(ngModel)]="word"required>
+                </mat-form-field>
+                <mat-divider>
+                </mat-divider>
+                <mat-form-field>
+                    <input id="synonym" matInput placeholder="Synonym" [(ngModel)]="synonym" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input id="antonym" matInput placeholder="Antonym" [(ngModel)]="antonym" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input id="general_sense" matInput placeholder="General Sense" [(ngModel)]="general_sense" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input id="example_usage" matInput placeholder="Example Usage" [(ngModel)]="example_usage" required>
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions >
+                <button id="submitButton" mat-raised-button color="primary" (click)="submitNewCard()">Create {{this.word}}</button>
+                <button id="cancelButton" mat-raised-button color="warn" [routerLink]="['/']">Cancel</button>
+            </mat-card-actions>
+        </div>
+</mat-card>
