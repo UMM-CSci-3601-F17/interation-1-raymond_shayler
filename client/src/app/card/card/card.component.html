@@ -1,13 +1,13 @@
 <mat-card>
     <mat-divider>
-        <h1>{{this.word}}:</h1>
+        <h1>{{this.word}}</h1>
     </mat-divider>
     <mat-divider>
         <ul id="hintContainer">
-            <li *ngIf="this.synonym">Synonym: {{this.synonym}}:</li>
-            <li *ngIf="this.antonym">Antonym: {{this.antonym}}:</li>
-            <li *ngIf="this.general_sense">General sense: {{this.general_sense}}</li>
-            <li *ngIf="this.example_usage">Example use: "{{this.example_usage}}"</li>
+            <li *ngIf="this.synonym"><strong>Synonym:</strong>{{this.synonym}}</li>
+            <li *ngIf="this.antonym"><strong>Antonym:</strong> {{this.antonym}}</li>
+            <li *ngIf="this.general_sense"><strong>General Sense:</strong> {{this.general_sense}}</li>
+            <li *ngIf="this.example_usage"><strong>Example Use:</strong> "{{this.example_usage}}"</li>
         </ul>
     </mat-divider>
     <mat-card-actions>

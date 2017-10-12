@@ -1,13 +1,13 @@
 <td-layout #layout>
     <td-navigation-drawer id="main-side-nav" flex sidenavTitle="Sage">
         <mat-nav-list>
-            <a mat-list-item [routerLink]="['/']" (click)="layout.close()" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon>Home</a>
-            <a mat-list-item [routerLink]="['/']" (click)="layout.close()" routerLinkActive="nav-active"><mat-icon>credit_card</mat-icon>Settings</a>
-            <a mat-list-item [routerLink]="['/']" (click)="layout.close()" routerLinkActive="nav-active"><mat-icon>help</mat-icon>Help</a>
+            <a id="navHome" mat-list-item [routerLink]="['/']" (click)="layout.close()" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon>Home</a>
+            <a id="navSettings" mat-list-item [routerLink]="['/']" (click)="layout.close()" routerLinkActive="nav-active"><mat-icon>credit_card</mat-icon>Settings</a>
+            <a id="navProfile" mat-list-item [routerLink]="['/']" (click)="layout.close()" routerLinkActive="nav-active"><mat-icon>help</mat-icon>Help</a>
         </mat-nav-list>
     </td-navigation-drawer>
     <td-layout-nav  toolbarTitle="Sage" navigationRoute="/">
-        <button mat-icon-button td-menu-button tdLayoutToggle>
+        <button id="launchNav" mat-icon-button td-menu-button tdLayoutToggle>
             <mat-icon>menu</mat-icon>
         </button>
         <router-outlet></router-outlet>

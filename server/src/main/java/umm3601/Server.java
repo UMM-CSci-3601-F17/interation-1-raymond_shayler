@@ -71,9 +71,9 @@ public class Server {
 
         //List users, filtered using query parameters
 
-        get("api/users", userController::getUsers);
-        get("api/users/:id", userController::getUser);
-        post("api/users/new", userController::addNewUser);
+//        get("api/users", userController::getUsers);
+//        get("api/users/:id", userController::getUser);
+//        post("api/users/new", userController::addNewUser);
         /////Card endpoints/////////
 
         get("api/cards", cardController::getCards);
