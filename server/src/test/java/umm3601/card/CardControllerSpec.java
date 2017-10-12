@@ -75,11 +75,34 @@ public class CardControllerSpec
         return arrayReader.decode(reader, DecoderContext.builder().build());
     }
 
-
+    //Helper methods for testing
     private static String getWord(BsonValue val) {
         BsonDocument doc = val.asDocument();
         return ((BsonString) doc.get("word")).getValue();
     }
+
+    private static String getSynonym(BsonValue val) {
+        BsonDocument doc = val.asDocument();
+        return ((BsonString) doc.get("synonym")).getValue();
+    }
+
+    private static String getAntonym(BsonValue val) {
+        BsonDocument doc = val.asDocument();
+        return ((BsonString) doc.get("antonym")).getValue();
+    }
+
+    private static String getGeneral_sense(BsonValue val) {
+        BsonDocument doc = val.asDocument();
+        return ((BsonString) doc.get("general_sense")).getValue();
+    }
+
+    private static String getExample_usage(BsonValue val) {
+        BsonDocument doc = val.asDocument();
+        return ((BsonString) doc.get("example_usage")).getValue();
+    }
+
+
+
 
     @Test
     public void getAllCards(){
@@ -120,7 +143,7 @@ public class CardControllerSpec
 
 
     @Test
-    public void addCard() {
+    public void addNewCard() {
         cardController.addNewCard("Colloquial", "conversational", "esoteric", "commonly understood lexicon", "He spoke with colloquial jargon.");
 
         Map<String, String[]> emptyMap = new HashMap<>();
@@ -135,6 +158,40 @@ public class CardControllerSpec
             .collect(Collectors.toList());
         List<String> expectedWords = Arrays.asList("Blasphemous", "Colloquial", "Rugose");
         assertEquals("Words should match", expectedWords, words);
+    }
+
+    @Test
+    public void checkNewCardAttributes() {
+        cardController.addNewCard("Colloquial", "conversational", "esoteric", "commonly understood lexicon", "He spoke with colloquial jargon.");
+
+        Map<String, String[]> emptyMap = new HashMap<>();
+        String jsonResult = cardController.getCards(emptyMap);
+        BsonArray docs = parseJsonArray(jsonResult);
+
+        List<String> synonyms = docs
+            .stream()
+            .map(CardControllerSpec::getSynonym)
+            .sorted()
+            .collect(Collectors.toList());
+        assertEquals("New synonym should be included among the cards",true,synonyms.contains("conversational"));
+        List<String> antonyms = docs
+            .stream()
+            .map(CardControllerSpec::getAntonym)
+            .sorted()
+            .collect(Collectors.toList());
+        assertEquals("New antonym should be included among the cards",true,antonyms.contains("esoteric"));
+        List<String> general_senses = docs
+            .stream()
+            .map(CardControllerSpec::getGeneral_sense)
+            .sorted()
+            .collect(Collectors.toList());
+        assertEquals("New general_sense should be included among the cards",true,general_senses.contains("commonly understood lexicon"));
+        List<String> example_usages = docs
+            .stream()
+            .map(CardControllerSpec::getExample_usage)
+            .sorted()
+            .collect(Collectors.toList());
+        assertEquals("New example_usage should be included among the cards",true,example_usages.contains("He spoke with colloquial jargon."));
     }
     //kept for reference in writing new tests.
 //    @Test
